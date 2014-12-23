@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%= _.slugify(slug) %></title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css /styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css /styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+
+    <!-- build:js /scripts/vendor/modernizr.js -->
+    <script src="../bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+  </head>
+
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+
+    <header class="layout layout--middle">
+      <div class="layout__item 1/3">
+        <h1>Styleguide</h1>
+      </div>
+
+      <div class="layout__item 2/3">
+        <ul class="list-inline">
+          <li><a href="/base.html">Base</a></li>
+          <li><a href="/components.html">Components</a></li>
+          <li><a href="/objects.html">Objects</a></li>
+          <li><a href="/tools.html">Tools</a></li>
+          <li><a href="/trumps.html">Trumps</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <hr class="rule">
+
+    <div class="layout">
+      <div class="layout__item 1/4">
+        <% if @blocks.length > 0 %>
+          <h2>Navigation</h2>
+
+          <ul class="list-ui">
+            <% @blocks.each do |block| %>
+              <li><a href="#<%= block[:name] %>"><%= block[:title] %></a></li>
+            <% end %>
+          </ul>
+        <% end %>
+      </div>
+
+      <div class="layout__item 3/4">
