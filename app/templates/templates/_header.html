@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title><%= _.slugify(slug) %></title>
+    <title><% if title != '' %><%= title %> — <% end %> Styleguide</title>
 
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,8 +18,8 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-    <!-- build:css /styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <!-- build:css /styles/styleguide.css -->
+    <link rel="stylesheet" href="styles/styleguide.css">
     <!-- endbuild -->
 
     <!-- build:js /scripts/vendor/modernizr.js -->
@@ -27,24 +27,25 @@
     <!-- endbuild -->
   </head>
 
-  <body>
+  <body class="ph">
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-
-    <header class="layout layout--middle">
-      <div class="layout__item 1/3">
-        <h1>Styleguide</h1>
+    <header class="layout layout--middle pv">
+      <div class="layout__item palm-1/1 lap-and-up-1/3">
+        <h1 class="mb0">Styleguide</h1>
       </div>
 
-      <div class="layout__item 2/3">
-        <ul class="list-inline">
-          <li><a href="/base.html">Base</a></li>
-          <li><a href="/components.html">Components</a></li>
-          <li><a href="/objects.html">Objects</a></li>
-          <li><a href="/tools.html">Tools</a></li>
-          <li><a href="/trumps.html">Trumps</a></li>
+      <div class="layout__item palm-1/1 lap-and-up-2/3">
+        <ul class="list-inline lap-and-up-text--right">
+          <% @categories.each_with_index do |cat, index| %>
+            <li class="<% if index != 0 %>pl-<% end %>">
+              <a class="<% if title == cat[0] %>weight--600<% end %>" href="/<%= cat[0].downcase %>.html">
+                <%= cat[0] %>
+              </a>
+            </li>
+          <% end %>
         </ul>
       </div>
     </header>
@@ -52,11 +53,9 @@
     <hr class="rule">
 
     <div class="layout">
-      <div class="layout__item 1/4">
+      <div class="layout__item palm-1/1 lap-1/3 desk-1/4">
         <% if @blocks.length > 0 %>
-          <h2>Navigation</h2>
-
-          <ul class="list-ui">
+          <ul class="list-ui list-ui--small mb">
             <% @blocks.each do |block| %>
               <li><a href="#<%= block[:name] %>"><%= block[:title] %></a></li>
             <% end %>
@@ -64,4 +63,4 @@
         <% end %>
       </div>
 
-      <div class="layout__item 3/4">
+      <div class="layout__item palm-1/1 lap-2/3 desk-3/4">

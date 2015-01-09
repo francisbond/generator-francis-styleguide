@@ -1,0 +1,136 @@
+/*------------------------------------*\
+  #LAYOUT
+\*------------------------------------*/
+
+/*doc
+---
+title: Layout
+name: layout
+category: Objects
+---
+
+Simple flexbox-based responsive grid system.
+
+```html_example
+<div class="layout">
+  <div class="layout__item 1/6">
+    One sixth
+  </div>
+
+  <div class="layout__item 3/6">
+    Three sixths
+  </div>
+
+  <div class="layout__item 2/6">
+    Two sixths
+  </div>
+</div>
+```
+
+Description                                      | Class
+------------------------------------------------ | -----------------------------------
+Begin a layout group.                            | `l` or `layout`
+Apply widths to items to build a layout.         | `l__item` or `layout__item`
+Reversed rendered order of layout items.         | `l--reverse` or `layout--reverse`
+
+## Modifiers
+
+### Vertical alignment
+
+Description                                      | Class
+------------------------------------------------ | -----------------------------------
+Align layout items to the vertical baseline.     | `l--baseline` or `layout--baseline`
+Align layout items to the top of each other.     | `l--top` or `layout--top`
+Align layout items to the middle of each other.  | `l--middle` or `layout--middle`
+Align layout items to the bottom of each other.  | `l--bottom` or `layout--bottom`
+
+### Horizontal alignment
+
+Description                                      | Class
+------------------------------------------------ | -----------------------------------
+Make the layout items fill up from the left.     | `l--left` or `layout--left`
+Make the layout items fill up from the right.    | `l--center` or `layout--center`
+Make the layout items fill up from the center.   | `l--right` or `layout--right`
+
+### Spacing
+
+Description                                      | Class
+------------------------------------------------ | -----------------------------------
+Distribute layout items with space around them.  | `l--around` or `layout--around`
+Distribute layout items with space between them. | `l--between` or `layout--between`
+*/
+
+.l,
+.layout {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: -$inuit-base-spacing-unit;
+}
+
+  .l__item,
+  .layout__item {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    padding-left: $inuit-base-spacing-unit;
+  }
+
+
+
+.l--reverse,
+.layout--reverse {
+  flex-direction: row-reverse;
+  flex-wrap: row-reverse;
+}
+
+
+
+.l--left,
+.layout--left {
+  justify-content: flex-start;
+}
+
+.l--center,
+.layout--center {
+  justify-content: center;
+}
+
+.l--right,
+.layout--right {
+  justify-content: flex-end;
+}
+
+
+
+.l--baseline,
+.layout--baseline {
+  align-items: baseline;
+}
+
+.l--top,
+.layout--top {
+  align-items: flex-start;
+}
+
+.l--middle,
+.layout--middle {
+  align-items: center;
+}
+
+.l--bottom,
+.layout--bottom {
+  align-items: flex-end;
+}
+
+
+
+.l--around,
+.layout--around {
+  justify-content: space-around;
+}
+
+.l--between,
+.layout--between {
+  justify-content: space-between;
+}

@@ -1,1 +1,2 @@
-export BUILDPACK_URL="https://github.com/francisbond/dokku-buildpack-static"
+export BUILDPACK_URL=https://github.com/zeke/harp-buildpack
+export HARP_ROOT=./public

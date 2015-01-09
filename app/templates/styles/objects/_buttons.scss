@@ -1,0 +1,23 @@
+/*doc
+---
+title: Buttons
+name: buttons
+category: Objects
+---
+
+A simple button object.
+
+```html_example
+<a href="#" class="btn">Push Me</a>
+```
+
+## Sizes
+
+Modifier                                            | Class
+--------------------------------------------------- | ------------
+<a href="#" class="btn btn--small">Small Button</a> | `btn--small`
+<a href="#" class="btn btn--large">Large Button</a> | `btn--large`
+<a href="#" class="btn btn--full">Full Button</a>   | `btn--full`
+<a href="#" class="btn btn--pill">Pill</a>          | `btn--pill`
+
+*/

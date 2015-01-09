@@ -1,0 +1,20 @@
+/*doc
+---
+title: Functions
+name: functions
+category: Tools
+---
+
+## Maths helpers
+Halve and double numbers, returning rounded integers. E.g.:
+
+```
+.foo {
+  padding: quarter(3.2px);    // Returns 1
+  margin: halve(7.9px);       // Returns 4
+  height: double(36px);       // Returns 72
+  width: quadruple(3.125px);  // Returns 12
+}
+```
+
+*/

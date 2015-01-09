@@ -1,0 +1,70 @@
+/*doc
+---
+title: Colors
+name: colors
+category: Trumps
+---
+
+Font and background color helper classes.
+
+```html_example
+<p class="c--ui-base">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur iaculis sem quis rutrum elementum. Maecenas dignissim tincidunt lacus. Donec at congue est.
+</p>
+```
+
+## Font colors
+
+Modifier      | Class
+------------- | ------------------
+Brand Primary | `c--brand-primary`
+Base UI       | `c--ui-base`
+Light UI      | `c--ui-light`
+Dark UI       | `c--ui-dark`
+
+## Background colors
+
+Modifier      | Class
+------------- | -------------------
+Brand Primary | `bg--brand-primary`
+Base UI       | `bg--ui-base`
+Light UI      | `bg--ui-light`
+Dark UI       | `bg--ui-dark`
+
+*/
+
+$colors: (
+  "brand-primary"   "#3f89c1",
+  "ui-base"         "#ccc"
+  "ui-light"        "#eee"
+  "ui-dark"         "#999"
+) !default;
+
+$enable-font-colors:        true !default;
+$enable-background-colors:  true !default;
+
+@each $color in $colors {
+
+  $alias: nth($color, 1);
+  $value: nth($color, 2);
+
+  @if ($enable-font-colors == true) {
+    /**
+     * Font color #{$alias}
+     */
+    .c--#{$alias},
+    %c--#{$alias}{
+      color: #{$value} !important;
+    }
+  }
+
+  @if ($enable-background-colors == true) {
+    /**
+     * Background color #{$alias}
+     */
+    .bg--#{$alias},
+    %bg--#{$alias}{
+      background-color: #{$value} !important;
+    }
+  }
+}

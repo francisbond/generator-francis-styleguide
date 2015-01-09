@@ -1,0 +1,40 @@
+/*doc
+---
+title: Code
+name: code
+category: Base
+---
+
+## Inline code
+
+```html_example
+<p>Pellentesque habitant morbi tristique <code>$senectus</code> et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.</p>
+```
+
+## Code blocks
+
+```html_example
+<pre>
+  foo {
+    bar: baz;
+    color: #B4D455;
+  }
+</pre>
+```
+*/
+
+code, pre {
+  font-family: monospace;
+}
+
+pre {
+  overflow: hidden;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+  pre mark {
+    background: none;
+    border-bottom: 1px solid;
+    color: inherit;
+  }

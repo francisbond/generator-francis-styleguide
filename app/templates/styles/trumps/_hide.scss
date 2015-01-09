@@ -1,0 +1,24 @@
+/*doc
+---
+title: Hide
+name: hide
+category: Trumps
+---
+
+Hide content off-screen, also provide breakpoint specific hidden elements.
+
+```html
+<div class="hide">
+  <!-- Hidden on all breakpoints -->
+</div>
+
+<div class="lap-and-up-hide">
+  <!-- Hidden on lap and desk -->
+</div>
+
+<div class="palm-hide">
+  <!-- Hidden on palm -->
+</div>
+```
+
+*/

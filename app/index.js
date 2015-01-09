@@ -25,20 +25,7 @@ var FrancisStyleguideGenerator = yeoman.generators.Base.extend({
       name: 'production',
       message: 'Enter the hostname of the dokku production server',
       default: 'production.francisbond.com'
-    }, {
-      type: 'checkbox',
-      name: 'features',
-      message: 'What else would you like?',
-      choices: [{
-        name: 'inuit.css',
-        value: 'includeInuit',
-        checked: true
-      }, {
-        name: 'jQuery',
-        value: 'includejQuery',
-        checked: true
-      }]
-    }], function(props) {
+    }, function(props) {
       this.slug = props.slug;
       this.remoteStaging = props.staging;
       this.remoteProduction = props.production;
@@ -46,9 +33,6 @@ var FrancisStyleguideGenerator = yeoman.generators.Base.extend({
       var hasFeature = function(feat) {
         return props.features.indexOf(feat) !== -1;
       }
-
-      this.includeInuit = hasFeature('includeInuit');
-      this.includejQuery = hasFeature('includejQuery');
 
       done();
     }.bind(this));
@@ -63,13 +47,7 @@ var FrancisStyleguideGenerator = yeoman.generators.Base.extend({
   },
 
   styles: function() {
-    this.mkdir('app/styles');
-
-    this.copy('main.scss', 'app/styles/main.scss');
-
-    if (this.includeInuit) {
-      this.copy('vars.scss', 'app/styles/_vars.scss');
-    }
+    this.directory('styles', 'app/styles');
   },
 
   scripts: function() {
@@ -108,11 +86,6 @@ var FrancisStyleguideGenerator = yeoman.generators.Base.extend({
     this.copy('editorconfig', '.editorconfig');
     this.copy('jshintrc', '.jshintrc');
     this.copy('env', '.env');
-  },
-
-  public: function() {
-    this.mkdir('public');
-    this.copy('htaccess', 'public/.htaccess');
   },
 
   install: function() {

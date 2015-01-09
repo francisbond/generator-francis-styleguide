@@ -1,0 +1,41 @@
+/*doc
+---
+title: Images
+name: images
+category: Base
+---
+
+Fluid images for responsive purposes.
+
+```html_example
+<!-- Fluid width -->
+<img src="http://placehold.it/1000x400">
+```
+
+## Vertical alignment
+
+Description | Class
+----------- | ----------------
+Top         | `img--top`
+Middle      | `img--middle`
+Bottom      | `img--bottom`
+Baseline    | `img--baseline`
+
+*/
+
+
+.img--top {
+  vertical-align: top;
+}
+
+.img--middle {
+  vertical-align: middle;
+}
+
+.img--bottom {
+  vertical-align: bottom;
+}
+
+.img--baseline {
+  vertical-align: baseline;
+}

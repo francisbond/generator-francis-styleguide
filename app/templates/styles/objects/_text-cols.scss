@@ -1,0 +1,25 @@
+/*doc
+---
+title: Text Columns
+name: text-cols
+category: Objects
+---
+
+Set elements in columns of text.
+
+```html_example
+<p class="text-cols--2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur iaculis sem quis rutrum elementum. Maecenas dignissim tincidunt lacus. Donec at congue est. Vestibulum a est tincidunt, porta tortor ut, vehicula libero. Proin semper imperdiet libero, non pulvinar nunc pellentesque id.</p>
+```
+
+*/
+
+%text-cols {
+  @include media-query(desk) {
+    column-gap: $inuit-base-spacing-unit;
+  }
+}
+
+.text-cols--2    { @extend %text-cols; column-count: 2; }
+.text-cols--3    { @extend %text-cols; column-count: 3; }
+.text-cols--4    { @extend %text-cols; column-count: 4; }
+.text-cols--5    { @extend %text-cols; column-count: 5; }

@@ -1,0 +1,43 @@
+/*doc
+---
+title: Tables
+name: tables
+category: Objects
+---
+
+A simple table object.
+
+```html_example
+<table class="table--cosy table--cells">
+  <thead>
+    <th>Foo</th>
+    <th>Bar</th>
+    <th>Baz</th>
+  </thead>
+
+  <tr>
+    <td>Pellentesque habitant morbi tristique senectus</td>
+    <td>Netus et malesuada fames ac turpis egestas</td>
+    <td>Donec eu libero sit amet quam</td>
+  </tr>
+</table>
+```
+
+## Spacing
+
+Modifier                                      | Class
+--------------------------------------------- | ----------------
+Force tables into having equal-width columns. | `table--fixed`
+Tables with very tightly packed cells.        | `table--compact`
+Lightly packed cells.                         | `table--cosy`
+Tables with very widely padded cells.         | `table--comfy`
+
+## Borders
+
+Modifier                                      | Class
+--------------------------------------------- | ----------------
+Add borders around a `table`.                 | `table--cells`
+Add borders only to `table`’s rows.           | `table--rows`
+Add borders only to `table`’s columns.        | `table--columns`
+
+*/

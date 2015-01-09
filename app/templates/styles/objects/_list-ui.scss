@@ -1,0 +1,28 @@
+/*doc
+---
+title: List UI
+name: list-ui
+category: Objects
+---
+
+The list UI object creates blocky list items with a keyline separator
+out of a `ul` or `ol`.
+
+```html_example
+<ul class="list-ui">
+  <li>Foo</li>
+  <li>Bar</li>
+  <li>Baz</li>
+</ul>
+```
+
+## Modifiers
+
+Modifier      | Class
+--------------| ----------------
+Tiny list UI  | `list-ui--tiny`
+Small list UI | `list-ui--small`
+Large list UI | `list-ui--large`
+Huge list UI  | `list-ui--huge`
+
+*/

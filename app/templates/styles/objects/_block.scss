@@ -1,0 +1,45 @@
+/*doc
+---
+title: Block
+name: block
+category: Objects
+---
+
+The block object simply stacks an image on top of some text-like content.
+
+```html_example
+<div class="block">
+  <div class="block__img">
+    <img src="http://placehold.it/140x140">
+  </div>
+
+  <div class="block__body">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur iaculis sem quis rutrum elementum. Maecenas dignissim tincidunt lacus. Donec at congue est. Vestibulum a est tincidunt, porta tortor ut, vehicula libero. Proin semper imperdiet libero, non pulvinar nunc pellentesque id.</p>
+  </div>
+</div>
+```
+
+## Sizes
+
+Modifier    | Class
+----------- | --------------
+Tiny block  | `block--tiny`
+Small block | `block--small`
+Large block | `block--large`
+Huge block  | `block--huge`
+
+## Layout
+
+Modifier | Class
+-------- | --------------
+Flush    | `block--flush`
+
+## Alignment
+
+Modifier | Class
+-------- | ---------------
+Center   | `block--center`
+Right    | `block--right`
+
+
+*/

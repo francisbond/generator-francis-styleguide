@@ -13,9 +13,10 @@ var paths = {
   scripts: 'app/scripts/**/*.js',
   images: 'app/images/**/*.{gif,jpg,png,svg,webp}',
   extras: 'app/*.*',
-  html: ['app/**/*.{html,json,csv}'],
-  index: 'app/templates/*.html',
-  clean: ['.tmp/*', 'dist/**/*']
+  index: 'app/**/*.html',
+  clean: ['.tmp', '.tmp/**/*',
+          'dist', 'dist/**/*',
+          'public', 'public/**/*']
 };
 
 var knownOptions = {
@@ -123,16 +124,6 @@ gulp.task('clean', function(cb) {
 });
 
 /**
- * gulp html
- */
-gulp.task('html', function() {
-  return gulp.src(paths.html)
-    .pipe($.changed('dist'))
-    .pipe($.if(options.env === 'production', $.htmlmin({collapseWhitespace: true})))
-    .pipe(gulp.dest('dist'));
-})
-
-/**
  * gulp build
  */
 gulp.task('build', ['clean'], function() {
@@ -147,7 +138,6 @@ gulp.task('hologram', function() {
  * gulp build-useref
  */
 gulp.task('build-useref', [
-    'html',
     'images',
     'scripts',
     'styles',
@@ -193,7 +183,6 @@ gulp.task('watch', function() {
   gulp.watch('dist/**/*', ['hologram']);
 
   gulp.watch(paths.extras,  ['extras']);
-  gulp.watch(paths.html,    ['html']);
   gulp.watch(paths.index,   ['build-useref']);
   gulp.watch(paths.scripts, ['scripts']);
   gulp.watch(paths.styles,  ['styles']);

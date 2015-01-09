@@ -1,0 +1,50 @@
+/*doc
+---
+title: Stats
+name: stats
+category: Objects
+---
+
+Simple object to display key–value statistic-like information.
+
+```html_example
+<div class="stat-group">
+  <dl class="stat">
+    <dt class="stat__title">Modules</dt>
+    <dd class="stat__value">27,740</dd>
+  </dl>
+
+  <dl class="stat">
+    <dt class="stat__title">Pathways</dt>
+    <dd class="stat__value">11,529</dd>
+  </dl>
+
+  <dl class="stat">
+    <dt class="stat__title">Courses</dt>
+    <dd class="stat__value">12,105</dd>
+  </dl>
+</div>
+```
+*/
+
+.stat-group {
+  @extend %clearfix;
+  margin-left: -$inuit-base-spacing-unit;
+}
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    margin-left: $inuit-base-spacing-unit;
+  }
+
+    .stat__title {
+      order: 2;
+      font-weight: normal;
+    }
+
+    .stat__value {
+      margin-left: 0;
+      order: 1;
+    }

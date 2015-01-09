@@ -1,0 +1,147 @@
+/*doc
+---
+title: Forms
+name: forms
+category: Base
+---
+
+Basic form stylings.
+
+## Form Fields
+Group sets of form fields in a list.
+
+```html_example
+<form>
+  <ul class="form-fields">
+    <li>
+      <label>Name</label>
+      <input type="text" class="text-input">
+    </li>
+
+    <li>
+      <label>Email</label>
+      <input type="email" class="text-input">
+    </li>
+  </ul>
+</form>
+```
+
+## Labels
+
+We define a `.label` class as well as a `label` element. This means we can apply
+label-like styling to meta-labels for groups of options where a `label`
+element is not suitable.
+
+```html_example
+<span class="label">I might <em>look</em> like a label...</span>
+<input type="email" class="text-input">
+```
+
+### Additional
+
+Extra help text in `label`s.
+
+```html_example
+<label>Password <small class="additional">Make sure it's <strong>really</strong> secure.</small></label>
+<input type="email" class="text-input">
+```
+
+### Extra help
+
+Extra help text displayed after a field when that field is in focus.
+
+```html_example
+<input type="text" class="text-input" placeholder="Focus me!">
+<small class="extra-help">Hej!</small>
+```
+
+## Check list
+
+Groups of checkboxes and radios.
+
+```html_example
+<ul class="check-list">
+  <li>
+    <label><input type="checkbox"> One</label>
+  </li>
+
+  <li>
+    <label><input type="checkbox"> Two</label>
+  </li>
+
+  <li>
+    <label><input type="checkbox"> Three</label>
+  </li>
+</ul>
+```
+
+## Spoken Form
+
+Spoken forms are for forms that read like spoken word.
+
+```html_example
+<form class="spoken-form">
+  <label>Hi, my name is</label>
+  <input type="text" class="text-input" placeholder="Your name">
+</form>
+
+```
+*/
+
+fieldset {
+  padding: $inuit-base-spacing-unit;
+}
+
+.form-fields,
+%form-fields {
+  list-style: none;
+  margin: 0;
+
+  > li {
+    margin-bottom: $inuit-base-spacing-unit;
+  }
+
+  > li:last-child {
+    margin-bottom: 0;
+  }
+}
+
+label,
+.label,
+%label {
+  display: block;
+}
+
+  /*small*/.additional {
+    display: block;
+    font-weight: normal;
+  }
+
+.check-list {
+  list-style: none;
+  margin: 0;
+}
+
+  /*
+   * Labels in check-lists.
+   */
+  .check-label,
+  .check-list label,
+  .check-list .label {
+    display: inline-block;
+  }
+
+.spoken-form label {
+  display: inline-block;
+  font: inherit;
+}
+
+/*small*/.extra-help {
+  display: inline-block;
+  visibility: hidden;
+}
+
+.text-input:active + .extra-help,
+.text-input:focus + .extra-help {
+  visibility: visible;
+}

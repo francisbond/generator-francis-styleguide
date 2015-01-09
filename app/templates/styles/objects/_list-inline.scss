@@ -1,0 +1,26 @@
+/*doc
+---
+title: List Inline
+name: list-inline
+category: Objects
+---
+
+The list-inline object simply displays a list of items in one line.
+
+```html_example
+<ul class="list-inline">
+  <li><a href="#">Foo</a></li>
+  <li><a href="#">Bar</a></li>
+  <li><a href="#">Baz</a></li>
+</ul>
+```
+
+```html_example
+<ul class="list-inline list-inline--delimited">
+  <li><a href="#">Foo</a>
+  <li><a href="#">Bar</a>
+  <li><a href="#">Baz</a>
+</ul>
+```
+
+*/

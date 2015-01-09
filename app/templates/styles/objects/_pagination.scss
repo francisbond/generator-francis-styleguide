@@ -1,0 +1,50 @@
+/*doc
+---
+title: Pagination
+name: pagination
+category: Objects
+---
+
+Basic pagination object.
+
+```html_example
+<ul class="pagination">
+  <li class="pagination__first"><a href="#">First</a></li>
+  <li><a href="#">1</a></li>
+  <li><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+  <li class="pagination__last"><a href="#">Last</a></li>
+</ul>
+```
+
+*/
+
+.pagination {
+  @extend %list-inline;
+  text-align: center;
+
+  /**
+   * Remove whitespace caused by `inline-block`.
+   */
+  letter-spacing: -0.31em;
+  word-spacing: -0.43em;
+}
+
+  .pagination > li {
+    padding: $inuit-base-spacing-unit / 2;
+    letter-spacing: normal;
+    word-spacing: normal;
+  }
+
+    .pagination > li > a {
+      padding: $inuit-base-spacing-unit / 2;
+      margin: -$inuit-base-spacing-unit / 2;
+    }
+
+      .pagination__first a:before {
+        content: "\00AB" "\00A0";
+      }
+
+      .pagination__last a:after {
+        content: "\00A0" "\00BB";
+      }
