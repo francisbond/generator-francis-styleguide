@@ -25,7 +25,7 @@ var FrancisStyleguideGenerator = yeoman.generators.Base.extend({
       name: 'production',
       message: 'Enter the hostname of the dokku production server',
       default: 'production.francisbond.com'
-    }, function(props) {
+    }], function(props) {
       this.slug = props.slug;
       this.remoteStaging = props.staging;
       this.remoteProduction = props.production;
@@ -35,7 +35,7 @@ var FrancisStyleguideGenerator = yeoman.generators.Base.extend({
       }
 
       done();
-    }.bind(this);
+    }.bind(this));
   },
 
   app: function() {
