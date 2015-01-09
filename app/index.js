@@ -35,7 +35,7 @@ var FrancisStyleguideGenerator = yeoman.generators.Base.extend({
       }
 
       done();
-    }.bind(this));
+    }.bind(this);
   },
 
   app: function() {
