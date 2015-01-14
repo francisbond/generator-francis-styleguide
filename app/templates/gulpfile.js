@@ -126,10 +126,14 @@ gulp.task('clean', function(cb) {
 /**
  * gulp build
  */
-gulp.task('build', ['clean'], function() {
-  gulp.start('build-useref');
+gulp.task('build', ['build-useref'], function() {
+  gulp.start('hologram');
 });
 
+/**
+ * gulp hologram
+ */
+ 
 gulp.task('hologram', function() {
   spawn('hologram');
 });
@@ -158,7 +162,7 @@ gulp.task('build-useref', [
 /**
  * gulp connect
  */
-gulp.task('connect', ['build'], function () {
+gulp.task('connect', function () {
   var serveStatic = require('serve-static'),
       serveIndex = require('serve-index');
 
@@ -177,22 +181,22 @@ gulp.task('connect', ['build'], function () {
 /**
  * gulp watch
  */
-gulp.task('watch', function() {
+gulp.task('watch', ['build'], function() {
   $.livereload.listen();
-  gulp.watch('public/**/*', $.livereload.changed);
-  gulp.watch('dist/**/*', ['hologram']);
 
-  gulp.watch(paths.extras,  ['extras']);
-  gulp.watch(paths.index,   ['build-useref']);
-  gulp.watch(paths.scripts, ['scripts']);
-  gulp.watch(paths.styles,  ['styles']);
-  gulp.watch(paths.images,  ['images']);
+  gulp.watch('public/**/*', $.livereload.changed);
+  gulp.watch(paths.extras,  ['extras', 'hologram']);
+  gulp.watch(paths.index,   ['build-useref', 'hologram']);
+  gulp.watch(paths.scripts, ['scripts', 'hologram']);
+  gulp.watch(paths.styles,  ['styles', 'hologram']);
+  gulp.watch(paths.images,  ['images', 'hologram']);
 });
 
 /**
  * gulp watch
  */
-gulp.task('serve', ['connect', 'watch'], function () {
+gulp.task('serve', ['connect', 'watch'], function() {
+  gulp.start('hologram');
   require('opn')('http://localhost:9000');
 });
 
