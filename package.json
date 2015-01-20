@@ -1,6 +1,6 @@
 {
   "name": "generator-francis-styleguide",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Scaffold out a styleguide",
   "license": "MIT",
   "main": "app/index.js",
