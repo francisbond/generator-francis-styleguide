@@ -192,8 +192,10 @@ gulp.task('watch', function() {
 /**
  * gulp watch
  */
-gulp.task('serve', ['connect', 'watch'], function () {
+gulp.task('serve', ['connect', 'build', 'watch'], function () {
   require('opn')('http://localhost:9000');
+
+  gulp.start('hologram');
 });
 
 /**
