@@ -69,12 +69,15 @@ gulp.task('styles', function() {
   return gulp.src(paths.styles)
     .pipe($.plumber())
     .pipe($.rubySass({
+      bundleExec: true,
+      require: 'sass-globbing',
       loadPath: 'bower_components',
       style: 'expanded',
       precision: 10
     }))
     .pipe($.autoprefixer('last 1 version'))
-    .pipe(gulp.dest('dist/styles'))
+    .pipe($.if(options.env === 'production', $.csso()))
+    .pipe(gulp.dest('public/styles'))
 });
 
 /**
